@@ -3,7 +3,6 @@ const { APIError } = require("../helpers");
 
 function bodyParserHandler(error, request, response, next) {
   if (error instanceof SyntaxError || error instanceof TypeError) {
-    // console.error(error);
     return next(new APIError(400, "Bad Request", "Malformed JSON."));
   }
 }

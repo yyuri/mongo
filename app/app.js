@@ -1,11 +1,14 @@
 // npm packages
 const dotenv = require("dotenv");
 const express = require("express");
+const helmet = require('helmet')
+const cors = require('cors')
+const passport = require('passport')
 
 // app imports
-const { connectToDatabase, globalResponseHeaders } = require("./config/mongo");
+const { connectToDatabase } = require("./config/mongo");
 const { errorHandler } = require("./handlers");
-const { thingsRouter } = require("./routers");
+const router = require("./routers");
 
 // global constants
 dotenv.config();
@@ -25,11 +28,15 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json({ type: "*/*" }));
 app.use(bodyParserHandler); // error handling specific to body parser only
 
-// response headers setup; CORS
-app.use(globalResponseHeaders);
+// Headers and security setup, we use cors and helmet packages
+app.use(cors())
+app.use(helmet())
 
-app.use("/things", thingsRouter);
+// Passport
+app.use(passport.initialize())
 
+// Load and use all routes
+app.use("/", router)
 // catch-all for 404 "Not Found" errors
 app.get("*", fourOhFourHandler);
 // catch-all for 405 "Method Not Allowed" errors
@@ -39,6 +46,5 @@ app.use(globalErrorHandler);
 
 /**
  * This file does NOT run the app. It merely builds and configures it then exports it.config
- *  This is for integration tests with supertest (see __tests__).
  */
 module.exports = app;
