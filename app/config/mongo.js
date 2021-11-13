@@ -26,6 +26,10 @@ async function connectToDatabase() {
       useUnifiedTopology: true,
       useFindAndModify: false
     });
+    console.log('****************************')
+    console.log('*Server STARTED')
+    console.log(`*Port: ${process.env.PORT || 5000}`)
+    console.log(`*NODE_ENV: ${process.env.NODE_ENV}`)
     console.log(`${APP_NAME} successfully connected to database.`);
   } catch (error) {
     console.log(error);

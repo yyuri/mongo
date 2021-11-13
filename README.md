@@ -1,9 +1,8 @@
-# RESTful API Server Boilerplate
-## Featuring Docker, Node, Express, MongoDB, Mongoose, & NGINX
+# Dockerized Node-Express-Mongo API Server
 
 ## About
 
-This configuration is a backend [RESTful API](https://en.wikipedia.org/wiki/Representational_state_transfer) boilerplate with the following pieces:
+This configuration is a backend [RESTful API] with the following pieces:
 
 - [Docker](https://www.docker.com/) as the container service to isolate the environment.
 - [Node.js](https://nodejs.org/en/) (Long-Term-Support Version) as the run-time environment to run JavaScript.

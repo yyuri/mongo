@@ -1,5 +1,4 @@
 FROM node:14.16.1
-LABEL MAINTAINER Michael Hueter <mthueter@gmail.com>
 
 RUN npm install pm2@latest --global --quiet
 # add local user for security
@@ -13,7 +12,9 @@ RUN mkdir -p /home/nodejs/app
 WORKDIR /home/nodejs/app
 
 COPY package.json .
-RUN npm install --production --quiet
+# RUN npm install --production --quiet
+RUN npm install
+
 COPY . .
 
 
