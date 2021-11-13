@@ -1,10 +1,10 @@
-FROM node:14.16.1
+FROM node:17-alpine3.12
 
 RUN npm install pm2@latest --global --quiet
 # add local user for security
-RUN groupadd -r nodejs \
-  && useradd -m -r -g nodejs nodejs
+RUN addgroup -S nodejs && adduser -S nodejs -G nodejs
 
+# Tell docker that all future commands should run as the appuser user
 USER nodejs
 
 # copy local files into container, set working directory and user
