@@ -8,8 +8,7 @@
     "url": "git@github.com:mhueter/docker-node-express-boilerplate.git"
   },
   "main": "app/app.js",
-  "scripts": {
-  },
+  "scripts": {},
   "license": "MIT",
   "dependencies": {
     "bcrypt": "^5.0.1",
@@ -23,6 +22,7 @@
     "mongoose": "5.12.7",
     "passport": "^0.4.1",
     "passport-jwt": "^4.0.0",
+    "swagger-ui-express": "^4.1.6",
     "uuid": "^8.3.2"
   },
   "devDependencies": {

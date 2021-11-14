@@ -1,0 +1,16 @@
+@charset "UTF-8";
+.topbar {
+  display: none !important;
+}
+.curl-command {
+  display: none !important;
+}
+table.responses-table:nth-child(4) > tbody:nth-child(2) > tr:nth-child(1) > td:nth-child(2) > div:nth-child(2) {
+  display: none !important;
+}
+html body div#swagger-ui section.swagger-ui.swagger-container div.swagger-ui div div.wrapper section.block.col-12.block-desktop.col-12-desktop section.models.is-open div.no-margin div#model-Thing.model-container span.model-box div.model-box span.model span span.inner-object table.model {
+  margin-top: 12px;
+}
+.model-container {
+  margin: 30px 20px 10px !important;
+}
