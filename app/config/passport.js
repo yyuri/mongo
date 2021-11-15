@@ -1,6 +1,6 @@
 const passport = require('passport')
-const User = require('../app/models/user')
-const auth = require('../app/middleware/auth')
+const User = require('../../app/models/user')
+const auth = require('../../app/middleware/auth')
 const JwtStrategy = require('passport-jwt').Strategy
 
 /**
